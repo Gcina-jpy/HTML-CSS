@@ -31,11 +31,41 @@ FOR EXAMPLE : <article>
               <p>paragraph TWO</p>
               <p>paragraph THREE has <em>emphasized text</em></P>
               </article>
-this structure tells that article has one headline 3 paragraphs with third having emphasized text  
+this structure tells that article has one headline 3 paragraphs with third having emphasized text.  
 
 NOTE H1 AND P TAGS ARE NESTED IN ARTICLE ELEMENT !
 
+HTML HEADLINES : 
+-usually web pages contain various titles,headlines and sub headings .
+- when dealing with lengthly text, these elements serve the purpose of dividing content into smaller chunks.
+- -they help people comprehend stucture of page.
+- headlines can be found anywhere in a page .
+- there are 6 difrrent html elements used for marking up headlines.( h1 to h6).
+-  h1 being the largest and most and h6 smallest .
 
+HTML BOLD AND ITALICS
+- there are 4 html elements for these 2 for italics and 2 for bold.
+  FOR ITALICS
+- . We use the "<i>" element to apply visual italics and the "<em>" element to add emphasis.
+- note that <i> and <em> tag might look identical but they are for diffrent purposes and carry diffrent meanings. 
+  FOR BOLD
+- The first one is the "<strong>" element, which is used to show importance, seriousness, or urgency.(This element adds meaning to the text)
+- <b>" element is more generic and neutral. (this element does not carry any sort of meaning)
+- you can use <b> element if you want to catch readers attention or you want to make a phrase bold without conveying meaning.
+  
+HTML LISTS
+-  In HTML there are 3 types of lists.
+- the ordered list  <ol>
+                                  <li> </li>
+                                  <li>  </li>
+                                  </ol> 
+-  unordered list(grocery list)<ul>
+                    <li> milk </li>
+                     <li> eggs </li>
+
+                   </ul>
+-   definition lists
+-  
 
 
 CSS
@@ -47,5 +77,4 @@ CSS
 
 
 
-JavaScript 
-- used to create an interative/functional  web page 
+
