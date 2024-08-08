@@ -152,11 +152,35 @@ FOR EXAMPLE:
 -JPGs are a popular choice for compressing photographs.
 -PNG is a newer format that works well when you need transparency in a photograph.
 
+for image captions 
 
+<figure> <img src="https://figuresource.com/40289/alfonso.jpg" width="720" height="354" alt="The Gracious Host" > <figcaption> Alfonso serving pancakes </figcaption> </figure>
 
+WORKING WITH AUDIO
+- The audio element is diffrent from image, it has both opening and closing tags (making it more mordern giving it more power and flexibility)
+- just like the image element we use a source attribute to provide URL OF The audio file
+FOR EXAMPLE: <audio controls>
+             <source src="path/to/your-audio-file.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+    </audio>
+    
+WORKING WITH VIDEO
+- Just like working with audio To display a video, use the source attribute to specify the video file. And if the controls attribute is added,
+ the browser will automatically create a video player.
+- The controls attribute adds video controls, like play, pause, and volume.
 
+- It is a good idea to always include width and height attributes. If height and width are not set, the page might flicker while the video loads.
 
-  </nav>
+- The <source> element allows you to specify alternative video files which the browser may choose from. The browser will use the first recognized format.
+
+- The text between the <video> and </video> tags will only be displayed in browsers that do not support the <video> element.
+
+Working With Captions and Subtitles
+- 
+
+  
+
+  
 
 
 
