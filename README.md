@@ -176,15 +176,31 @@ WORKING WITH VIDEO
 - The text between the <video> and </video> tags will only be displayed in browsers that do not support the <video> element.
 
 Working With Captions and Subtitles
+- We are going to use the track element and link it to a text file to add captions to the video. This element adds functionality to the video player, allowing viewers to toggle captions on and off or switch between different subtitle options.
+
+    FOR EXAMPLE : <video width="200px" height="100px" controls src="enter location of the video">
+             <track src="https://freetestdata.com/wp-content/uploads/2022/02/Free_Test_Data_1MB_MP4.mp4"
+             kind="captions"
+             label="english"
+             srclang="en">  
+</video>          
+
+Embedding Media via Iframes
+-   Embedding refers to taking content from one site and placing it within the middle of another site's page.
+-   There is a wide range of content that can be embedded on a page. For instance, a map from Google
+  
+HTML Content Identification
+- The lang attribute is used to specify the language of a webpage. If the whole page is in one language, Set the language on the main element that wraps everything else.
+- If your webpage has multiple languages, specify the language for each part of the content.
 - 
 
-  
-
-  
-
-
-
-
+HTML Page
+- Firstly, the file should begin with a doctype statement
+- when we including this one, we are saying, "Hey, this is a modern web page, so follow modern best practices and treat it accordingly."
+- we enclose everything else on the page within an HTML element
+- Declare the language being used and the content flow direction
+- The head contains all the metadata that the browser needs to know but will not display on the page. The body, on the other hand, is for all the content and is composed of various elements already discussed in this course. The body is where most of the action happens.
+- the declearation of doc type statement,HTML element, head and body are building blocks of every website.
 
 
 CSS
