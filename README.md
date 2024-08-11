@@ -65,13 +65,7 @@ HTML LISTS
 
                    </ul>
 -   definition lists
--  
-
-
-
-
-
-
+  
 
 
 ARIA Roles
@@ -136,6 +130,7 @@ Navigation :
   <li><a href="#contact"></a></li>
     
   </ul>
+<</nav>
 
 IMAGES 
 - When we want to add an image to a webpage, we use the image element, which is simply written as IMG.
@@ -204,7 +199,6 @@ HTML Page
 
 
 CSS
-
 
 - It is responsible for how everything looks
 -the colors, fonts, and sizes. 
