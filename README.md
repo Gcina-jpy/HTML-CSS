@@ -197,6 +197,10 @@ HTML Page
 - The head contains all the metadata that the browser needs to know but will not display on the page. The body, on the other hand, is for all the content and is composed of various elements already discussed in this course. The body is where most of the action happens.
 - the declearation of doc type statement,HTML element, head and body are building blocks of every website.
 
+  Working with Forms and Interactive Elements
+-  A user could type anything in there, even though one of them is supposed to be for an email field. That is because we have yet to tell the browser what type of input is required from these fields.
+-  
+
 
 CSS
 
