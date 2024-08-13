@@ -199,7 +199,35 @@ HTML Page
 
   Working with Forms and Interactive Elements
 -  A user could type anything in there, even though one of them is supposed to be for an email field. That is because we have yet to tell the browser what type of input is required from these fields.
--  
+-  you can fix this by adding the type attribute to each input. for the name field, indicate the type equals text.
+- for the email field, tell the browser to collect an email address, and help user fill in the right info by trype being equals to email.
+- also tell browser that our button is a submit button.
+- we can also add a required attribute making email required
+- lastly we include the placeholder (suggestions of what should go in the field)
+- we can also add the value attribute.
+  
+FOR EXAMPLE : <section class="sign-up">
+              <form action="example.html" method="get">
+              <label for="name">Name</label>
+              <input name="name" id="name" type="text">
+              <label for="email">email</label>
+              <input name="email" id="email" type="email" required 
+               placeholder="m@example.com">
+              <button>sign-up</button>
+             </form>
+              </section>
+
+HTML Tables
+- you can use tables for diffrent reasons, comparing prices of things that are for sale, population data by town election results e.t.c
+-To create an HTML table, you use several different HTML elements in just the right combination. Table, TR, TH, and TD.
+-the table element wraps around the whole table, around all our content and markup for that table, marking the beginning and end of the table itself.
+- TR element stands for table row and wraps
+- TH element stand for table header and defines a header for a column
+- TD element stands for table data and mark up the cells of data 
+
+
+
+
 
 
 CSS
