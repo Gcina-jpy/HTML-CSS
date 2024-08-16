@@ -233,7 +233,9 @@ HTML Tables
 CSS
 
 - It is responsible for how everything looks
--the colors, fonts, and sizes. 
+-the colors, fonts, and sizes.
+- what if we want to make a specific paragraph green? Or maybe we just want to make a portion of a paragraph green? How is this done?
+  You can assign classes to HTML elements to create a reference point for styling. A class is an attribute that can be added to any HTML element, providing additional details about that element.
 
 
 
