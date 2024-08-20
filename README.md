@@ -237,6 +237,15 @@ CSS
 - what if we want to make a specific paragraph green? Or maybe we just want to make a portion of a paragraph green? How is this done?
   You can assign classes to HTML elements to create a reference point for styling. A class is an attribute that can be added to any HTML element, providing additional details about that element.
 
+  Advanced CSS properties 
+- you can change the color/ style html and css links
+- first start by using "a" which is an anchor, which you will use as refrence when styling.
+- One common exception is the "a:hover" state, which triggers when we hover over a link.
+- you can use text decoration as none to remove the under line under links
+- Now, when you hover over the links, they change color and the underline disappears. This was not possible before without the hover style. If we remove the hover style, nothing happens when you hover over the links.
+- Define the nice blue color as the "a:link" style for unvisited links, and the lovely shade of purple (785ef0) as the "a:visited" style for visited links.
+- 
+
 
 
 
