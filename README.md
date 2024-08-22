@@ -245,7 +245,14 @@ CSS
 - Now, when you hover over the links, they change color and the underline disappears. This was not possible before without the hover style. If we remove the hover style, nothing happens when you hover over the links.
 - Define the nice blue color as the "a:link" style for unvisited links, and the lovely shade of purple (785ef0) as the "a:visited" style for visited links.
 - 
-
+Debugging CSS with Borders and Background Colors
+-Sometimes you come across a problem when styling elements with CSS. You might wonder which element you should style or why your styles are not working as expected.
+  - When facing such challenges, debugging can be very helpful.
+  - one trick to use is to change background color or have a border to the element you wnat to style
+  - like "border: 2px solid red."
+  - this will reveal hidden information and this will show where exactly the element
+  - 
+  
 
 
 
