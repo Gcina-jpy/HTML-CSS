@@ -251,7 +251,29 @@ Debugging CSS with Borders and Background Colors
   - one trick to use is to change background color or have a border to the element you wnat to style
   - like "border: 2px solid red."
   - this will reveal hidden information and this will show where exactly the element
-  - 
+ 
+
+  jAVASCRIPT 
+- javascript is a programmiing language used to make a web page interactive
+
+variables- the container that holds data values 
+data types - the type of data that the variable holds 
+
+we have several data types like arrays,numbers,booleans,string,object 
+- you cam declare a variable using var,let and const 
+
+let - can be reassigned 
+const- cannot be re assigned 
+
+for example : let name = "Gcina";  the name can be reassigned.  
+              const age = 23; age cannot be re-assigned or changed.
+ OPERATORS : - are symbols or keywords used to perform operations on values 
+we have diffrent types of operators : 
+
+1- arithmetic operators- these are used for mathematical calculations ( multiplication* +;-;% and exponential **)
+2- assignment operators - used to assign values to variables ( assign , += , -=, *=,/=)
+3- comparison operators - used to compare values and return booleans 
+
   
 
 
