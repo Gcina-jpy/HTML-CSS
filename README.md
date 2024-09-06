@@ -578,3 +578,388 @@ CONTROL STRUCTURES (if-else, switch)
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+111
+
+  <DOCTYPE html>
+<html lang="en">
+!
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Head's Hub</title>
+
+    <style>
+        body {
+            margin-top: 200px;
+            background-color: #1a3c35;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 1rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        header {
+            color: white;
+            background-color: #1a3c35;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            margin-bottom: 0;
+            z-index: 20;
+            background-color: #1a3c35;
+            padding: 20px 0;
+        }
+
+        h2 {
+            margin-left: 50px;
+            font-size: 35px;
+            margin-top: -10px;
+            font-size: 20px;
+          
+        }
+
+        nav {
+            overflow: hidden;
+            text-align: right;
+            margin-top: -5px;
+            margin-right: 60px;
+            
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 1rem 1.25rem;
+        }
+
+        nav a:hover {
+            background-color: aliceblue;
+            color: #1a3c35;
+        }
+
+        .container img {
+            width: 2rem;
+            height: 2rem;
+            opacity: 0.5;
+            border-radius: 1rem;
+           margin-left: 1250px;
+           
+          
+           
+        }
+
+        .imageR {
+            width: 40rem;
+            height: 26rem;
+            background-color: #1a3c35;
+            margin-bottom: 200px;
+           
+        }
+
+        .home {
+            display: flex;
+            color: aliceblue;
+            margin-top: -120px;
+        }
+
+        .container-left h1 {
+            font-size: 2em;
+            padding: 40px;
+            margin-top: 60px;
+            position: relative;
+            top: 60px;
+            left: 70px;
+        }
+
+        .container-left p {
+            margin-left: 100px;
+            line-height: 20px;
+            font-size: larger;
+        }
+
+        .container-left {
+            background-image: url('./image2.jpg');
+            background-size: contain;
+            width: 60rem;
+            height: 44rem;
+            background-repeat: no-repeat;
+        }
+
+        .container-right img {
+            width: 44rem;
+            height: 30rem;
+            margin-top: 120px;
+            opacity: 0.2;
+        }
+
+        .container-left button {
+            background-color: white;
+            color: #133a32;
+            font-weight: bold;
+            width: 236px;
+            height: 60px;
+            margin-left: 11rem;
+            margin-top: 28px;
+            font-size: large;
+            border: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .home {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+             <a href="./indeex.html" ><img src="./profile-user.png" alt="profile-user" ></a> 
+            <h2>CODE HEAD'S <br>HUB</h2>
+            <nav>
+                <a href="#home">HOME</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="#courses">COURSES</a>
+                <a href="#book-us">BOOK US</a>
+                <a href="#contact-us">CONTACT US</a>
+              
+            </nav>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="container-left">
+            <h1>WELCOME TO THE<br>FUTURE OF<br>LEARNING: EXPLORE,<br>CREATE AND<br>INNOVATE.</h1>
+            <p>LEARN WITH CONFIDENCE IN OUR SUPPORTIVE COMMUNITY!<br>EXPAND YOUR SKILLS, AND CONNECT WITH<br>A COMMUNITY
+                THAT IS FUTURE-FOCUSED</p>
+            <button><a href="#" style="color: #1a3c35;">START LEARNING</a></button>
+        </div>
+
+        <div class="container-right">
+            <img class="imageR" src="./image 1.jpg" alt="Laptop Image">
+        </div>
+    </section>
+
+    <section class="about-us" id="about-us">
+        <!-- Content for About Us -->
+    </section>
+
+    <section class="courses" id="courses">
+        <!-- Content for Courses -->
+    </section>
+
+    <section class="why-us">
+        <!-- Content for Why Us -->
+    </section>
+
+    <section class="book-us" id="book-us">
+        <!-- Content for Book Us -->
+    </section>
+
+    <section class="events">
+        <!-- Content for Events -->
+    </section>
+</body>
+
+</html>
+
+
+
+222
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code Head's Hub</title>
+  
+  <style>
+    body {
+      margin-top: 200px;
+      background-color: #1a3c35;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      padding: 1rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    header {
+      color: white;
+      background-color: #1a3c35;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      margin-bottom: 0;
+      z-index: 20;
+      background-color: #1a3c35;
+      padding: 20px 0;
+    }
+
+    h2 {
+     margin-left: 250px;
+      font-size: 35px;
+      margin-top: -40px;
+    }
+
+    nav {
+      overflow: hidden;
+      text-align: right;
+      margin-top: -5px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 1rem 1.25rem;
+    }
+
+    nav a:hover {
+      background-color: aliceblue;
+      color: #1a3c35;
+    }
+
+    .container img {
+      width: 4rem;
+      height: 4rem;
+      opacity: 0.5;
+      border-radius: 2rem;
+    }
+
+    .imageR {
+      width: 40rem;
+      height: 26rem;
+      background-color: #1a3c35;
+      margin-bottom: 200px;
+    }
+
+    .home {
+      display: flex;
+      color: aliceblue;
+      margin-top: -120px;
+    }
+
+    .container-left h1 {
+      font-size: 2em;
+      padding: 30px;
+      margin-top: 60px;
+      position: relative;
+      top: 60px;
+      left: 120px;
+    }
+
+    .container-left p {
+      margin-left: 145px;
+      line-height: 20px;
+      font-size: larger;
+    }
+
+    .container-left {
+      background-image: url('./image2.jpg');
+      background-size: contain;
+      width: 60rem;
+      height: 44rem;
+      background-repeat: no-repeat;
+    }
+
+    .container-right img {
+      width: 44rem;
+      height: 30rem;
+      margin-top: 120px;
+      opacity: 0.2;
+    }
+
+    .container-left button {
+      background-color: white;
+      color: #133a32;
+      font-weight: bold;
+      width: 236px;
+      height: 60px;
+      margin-left: 15rem;
+      margin-top: 135px;
+      font-size: large;
+      border: none;
+    }
+
+    @media screen and (max-width: 800px) {
+      .home {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="./image3.jpg" alt="Logo" width="2rem" height="2rem">
+      <h2>CODE HEAD'S HUB</h2>
+      <nav>
+        <a href="#home">HOME</a>
+        <a href="#about-us">ABOUT US</a>
+        <a href="#courses">COURSES</a>
+        <a href="#book-us">BOOK US</a>
+        <a href="#contact-us">CONTACT US</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="container-left">
+      <h1>JOIN US WHERE<br>INNOVATION MEETS<br>INSPIRATION.</h1>
+      <p>DIVE INTO CUTTING-EDGE TECHNOLOGY,<br>EXPAND YOUR SKILLS, AND CONNECT WITH<br>A COMMUNITY THAT IS FUTURE-FOCUSED</p>
+      <button><a href="#" style="color: #1a3c35;">JOIN US</a></button>
+    </div>
+
+    <div class="container-right">
+      <img class="imageR" src="./image 1.jpg" alt="Laptop Image">
+    </div>
+  </section>
+
+  <section class="about-us" id="about-us">
+    <!-- Content for About Us -->
+  </section>
+
+  <section class="courses" id="courses">
+    <!-- Content for Courses -->
+  </section>
+
+  <section class="why-us">
+    <!-- Content for Why Us -->
+  </section>
+
+  <section class="book-us" id="book-us">
+    <!-- Content for Book Us -->
+  </section>
+
+  <section class="events">
+    <!-- Content for Events -->
+  </section>
+</body>
+
+</html>
+
