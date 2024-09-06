@@ -305,7 +305,51 @@ TYPES OF EXPRESSIONS:
                        FOR EXAMPLE : let canVote = (age >= 18) && (citizen === true) 
                           
 CONTROL STRUCTURES (if-else, switch)
-- 
+IF-ELSE 
+- the if-else statement is a fundamental control structure that executes a block of code if a specified condition is true. i fcoondition is false, the else block is executed instead.
+- structure : if block - executes whe the condition is true
+- else if block - optional, executes another condition if previous one was false
+- else block - executes when none of previous conditions were met
+- if-else - statements are used when there are multiple conditions to evaluate. with diffrent outcomes depending on which conditions are true.
+
+SWITCH STATEMENT 
+- this is another control struture used for executing one block of code among many based on the value of an expression.
+- switch keyword: evaluates an expression and matches it to one of several 'case' labels.
+- case labels: each 'case' contains the code to to execute if the expression matches the label.
+- break statemet: stops the execution of more cases after a match is found. without break, the code will continue executing the subsequent cases. 
+-default case : executes if no matching case is found
+- use case: the switch statement is ideal when you need to compare a single expression against multiple potential values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!DOCTYPE html>
