@@ -1007,3 +1007,323 @@ SWITCH STATEMENT
 
 </html>
 
+rest api 
+const http = require('http');
+const fs = require('fs');
+
+const port = 4000;
+const dataFilePath = './items.json';
+
+// Helper function to read data from JSON file
+const readItems = () => {
+  try {
+    const data = fs.readFileSync(dataFilePath, 'utf-8');
+    return JSON.parse(data || '[]');
+  } catch (error) {
+    console.error('Error reading items:', error);
+    return [];
+  }
+};
+
+// Helper function to write data to JSON file
+const writeItems = (items) => {
+  try {
+    fs.writeFileSync(dataFilePath, JSON.stringify(items, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Error writing items:', error);
+  }
+};
+
+const server = http.createServer((req, res) => {
+  const url = req.url;
+  const method = req.method;
+
+  if (method === 'GET' && url === '/items') {
+    // Read: Retrieve all items
+    const items = readItems();
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(items));
+  }
+
+  else if (method === 'POST' && url === '/items') {
+    // Create: Add a new item
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+
+    req.on('end', () => {
+      const newItem = JSON.parse(body);
+      const items = readItems();
+      newItem.id = items.length ? items[items.length - 1].id + 1 : 1; // Auto-increment ID
+      items.push(newItem);
+      writeItems(items);
+      res.writeHead(201, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(newItem));
+    });
+  }
+
+  else if (method === 'PUT' && url.startsWith('/items/')) {
+    // Update: Update an existing item by id
+    const id = parseInt(url.split('/').pop());
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+
+    req.on('end', () => {
+      const updatedItem = JSON.parse(body);
+      const items = readItems();
+      const index = items.findIndex(item => item.id === id);
+
+      if (index !== -1) {
+        items[index] = { ...items[index], ...updatedItem };
+        writeItems(items);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(items[index]));
+      } else {
+        res.writeHead(404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Item not found' }));
+      }
+    });
+  }
+
+  else if (method === 'DELETE' && url.startsWith('/items/')) {
+    // Delete: Remove an item by id
+    const id = parseInt(url.split('/').pop());
+    const items = readItems();
+    const index = items.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+      items.splice(index, 1);
+      writeItems(items);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ message: 'Item deleted' }));
+    } else {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Item not found' }));
+    }
+  }
+
+  else {
+    // Handle unknown routes
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Route not found' }));
+  }
+});
+
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+
+port
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gcina's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Gcina's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Gcina, a passionate web developer specializing in full-stack development. I love crafting 
+                responsive and dynamic web applications using the latest technologies. I aim to create clean, 
+                efficient, and user-friendly code.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>Project 1</h3>
+                    <p>A web app built with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project 2</h3>
+                    <p>A full-stack application using Node.js and MongoDB.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Project 3</h3>
+                    <p>A portfolio showcasing my design and development work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out on any of the platforms below.</p>
+            <ul class="contact-info">
+                <li>Email: <a href="mailto:gcina@example.com">gcina@example.com</a></li>
+                <li>LinkedIn: <a href="#">linkedin.com/in/gcina</a></li>
+                <li>GitHub: <a href="#">github.com/gcina</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gcina. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.about-section {
+    background: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.about-section h2 {
+    margin-bottom: 20px;
+}
+
+.projects-section {
+    background: #f4f4f4;
+}
+
+.projects-section .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section {
+    background: #fff;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.skills-list li {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 3px;
+}
+
+.contact-section {
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.contact-section ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.contact-section ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
