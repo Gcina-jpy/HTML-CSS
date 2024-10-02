@@ -1326,4 +1326,126 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+rest api 
+
+const http = require('http');
+const url = require('url');
+const PORT = 3000;
+const CONTENT_TYPE_JSON = { "Content-Type": "application/json" };
+const CONTENT_TYPE_HTML = { "Content-Type": "text/html" };
+let products = [
+    { id: 1, name: 'Product 1', price: 20.0 },
+    { id: 2, name: 'Product 2', price: 30.0 },
+  ];
+ 
+const server = http.createServer((req, res) => {
+ 
+    const parsedUrl = url.parse(req.url, true);
+  
+    if (req.method === 'GET') {
+    
+      handleGetRequest(req, res, parsedUrl);
+    } else if (req.method === 'POST' && parsedUrl.path === '/product') {
+      
+      handlePostRequest(req, res);
+    } else if (req.method === 'PUT' && parsedUrl.path.startsWith('/product/')) {
+    
+      handlePutRequest(req, res, parsedUrl);
+    } else if (req.method === 'DELETE' && parsedUrl.path.startsWith('/product/')) {
+  
+      handleDeleteRequest(req, res, parsedUrl);
+    } else {
+     
+      sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Method not allowed' });
+    }
+  });
+  server.listen(PORT, () => {
+    console.log(`Product server listening on ${PORT}`);
+  });
+  const sendResponse = (res, statusCode, contentType, data) => {
+    res.writeHead(statusCode, contentType);
+    res.end(JSON.stringify(data));
+  };
+  const handleGetRequest = (req, res, parsedUrl) => {
+    if (parsedUrl.path === '/') {
+   
+      sendResponse(res, 200, CONTENT_TYPE_HTML, `<b>Products <a href = '/product'>list</a> page</b>`);
+    } else if (parsedUrl.path === '/product') {
+     
+      sendResponse(res, 200, CONTENT_TYPE_JSON, products);
+    } else if (parsedUrl.path.startsWith("/product")) {
+  
+      const productId = parsedUrl.query.id || parseInt(parsedUrl.path.split('/').pop());
+      const product = getProductById(productId);
+  
+      if (product) {
+      
+        sendResponse(res, 200, CONTENT_TYPE_JSON, product);
+      } else {
+        
+        sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Product not found' });
+      }
+    } else {
+     
+      sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Endpoint not found' });
+    }
+  };
+  
+  
+  const getProductById = (productId) => {
+    return products.find(p => p.id === parseInt(productId));
+  };
+  const handlePostRequest = (req, res) => {
+    let requestBody = '';
+  
+    req.on('data', (chunk) => {
+      
+      requestBody += chunk;
+    });
+  
+    req.on('end', () => {
+    
+      const product = JSON.parse(requestBody);
+      product.id = products.length + 1;
+      products.push(product);
+
+      sendResponse(res, 201, CONTENT_TYPE_JSON, product);
+    });
+  };
+  const handlePutRequest = (req, res, parsedUrl) => {
+    let requestBody = '';
+  
+    req.on('data', (chunk) => {
+
+      requestBody += chunk;
+    });
+  
+    req.on('end', () => {
+     
+      const updatedProduct = JSON.parse(requestBody);
+      const productId = parseInt(parsedUrl.path.split('/').pop());
+      const productIndex = products.findIndex(p => p.id === productId);
+  
+      if (productIndex !== -1) {
+       
+        products[productIndex] = { ...products[productIndex], ...updatedProduct, id: productId };
+        sendResponse(res, 200, CONTENT_TYPE_JSON, products[productIndex]);
+      } else {
+       
+        sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Product not found' });
+      }
+    });
+  };
+  const handleDeleteRequest = (req, res, parsedUrl) => {
+    const productId = parseInt(parsedUrl.path.split('/').pop());
+    const productIndex = products.findIndex(p => p.id === productId);
+  
+    if (productIndex !== -1) {
+     
+      products.splice(productIndex, 1);
+      sendResponse(res, 200, CONTENT_TYPE_JSON, { message: `Product with id ${productId} deleted successfully` });
+    } else {
+      sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Product not found' });
+    }
+  };
 
